@@ -28,7 +28,7 @@ namespace EcommerceWeb.ViewModels
     {
         public int ProductId { get; set; }
         [Required(ErrorMessage = "* You cant leave the Product name blank")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "* Name must have min length of 3 and max Length of 50")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "* Name must have min length of 2 and max Length of 50")]
         public string Name { get; set; }
         public string Description { get; set; }
         [Required(ErrorMessage = "* Please enter the product price.")]

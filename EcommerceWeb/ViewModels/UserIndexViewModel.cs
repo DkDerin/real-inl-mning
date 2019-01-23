@@ -39,7 +39,12 @@ namespace EcommerceWeb.ViewModels
 
         public string UserId { get; set; }
         public string UserRoles { get; set; }
+        [Required(ErrorMessage = "This field has to be filled")]
+        [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "*This field has to be filled")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "* Name must have min length of 3 and max Length of 50")]
         public string UserName { get; set; }
 
         [Required]
@@ -59,8 +64,12 @@ namespace EcommerceWeb.ViewModels
     public class UserCRUDViewModel
     {
         public string UserId { get; set; }
+        [Required(ErrorMessage = "This field has to be filled")]
+        [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; }
-
+        [Required(ErrorMessage = "*This field has to be filled")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "* Name must have min length of 3 and max Length of 50")]
         public string UserName { get; set; }
 
         public string UserRoles { get; set; }

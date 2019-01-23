@@ -18,8 +18,11 @@
     <tr>
         <td>@item.Email</td>
         <td>@item.UserRoles</td>
-        <td> @Html.ActionLink("✐", "Edit", new { id = item.UserId }) </td>
-        <td> @Html.ActionLink("❌", "Delete", new { id = item.UserId }) </td>
+        @if (Request.IsAuthenticated)
+        {
+            <td> @Html.ActionLink("✐", "Edit", new { id = item.UserId }) </td>
+            <td> @Html.ActionLink("❌", "Delete", new { id = item.UserId }) </td>
+        }
     </tr>
     }
 
